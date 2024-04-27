@@ -26,7 +26,7 @@ export default function App() {
           The standard Lorem Ipsum passage, used since the 1500s...
         </Text>
       </ImageBackground>
-      <StatusBar style="auto" />
+      <StatusBar style="auto" hidden />
     </ScrollView>
   );
 }
