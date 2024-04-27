@@ -1,11 +1,11 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View,Image,ImageBackground ,ScrollView } from 'react-native';
+import { StyleSheet, Text, View,Image,ImageBackground ,ScrollView,Button } from 'react-native';
 const logoImage =require("./assets/adaptive-icon.png")
 
 export default function App() {
   return (
     <ScrollView style={{ flex: 1, backgroundColor: "white" ,padding:60}}>
-
+      <Button title='hello' onPress={()=>console.log("hello")}/>
       {/* <Image className="h-80 w-32" source={logoImage}/>
       <Image className="h-80 w-32 object-fill" source={{uri:"https://picsum.photos/300/300"}}/> */}
       <ImageBackground source={logoImage} style={{flex:1}}>
