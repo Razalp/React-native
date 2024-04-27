@@ -1,15 +1,18 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View,Image,ImageBackground ,ScrollView,Button } from 'react-native';
+import { StyleSheet, Text, View,Image,ImageBackground ,ScrollView,Button,Pressable } from 'react-native';
 const logoImage =require("./assets/adaptive-icon.png")
 
 export default function App() {
   return (
     <ScrollView style={{ flex: 1, backgroundColor: "white" ,padding:60}}>
-      <Button title='hello' onPress={()=>console.log("hello")}/>
+      <Button title='hello' color="green" onPress={()=>console.log("hello")}/>
       {/* <Image className="h-80 w-32" source={logoImage}/>
       <Image className="h-80 w-32 object-fill" source={{uri:"https://picsum.photos/300/300"}}/> */}
+   
       <ImageBackground source={logoImage} style={{flex:1}}>
+        <Pressable onPress={()=>console.log("hello world")}>
       <Text className="text-black text-5xl">Hello world</Text>
+      </Pressable>
       <Text className="text-black text-5xl">he standard Lorem Ipsum passage, used since the 1500s
 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 
