@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 // import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image, ImageBackground, ScrollView, Button, Pressable, Modal,StatusBar,ActivityIndicator } from 'react-native';
+import { StyleSheet, Text, View, Image, ImageBackground, ScrollView, Button, Pressable, Modal,StatusBar,ActivityIndicator ,Alert} from 'react-native';
 
 const logoImage = require("./assets/adaptive-icon.png");
 
@@ -9,6 +9,23 @@ export default function App() {
 
   return (
     <ScrollView style={{ flex: 1, backgroundColor: "white", padding: 60 }}>
+      <Button title='Alert' onPress={()=>Alert.alert("some problem")}/>
+      <Button title='Alert 2' onPress={()=>Alert.alert("some problem","Dob missing")}/>
+      <Button 
+        title='Alert 3' 
+        onPress={() => {
+          Alert.alert(
+            "Some Problem",
+            "DOB missing",
+            [
+              { text: "Cancel", onPress: () => console.log("Cancel Pressed"), style: "cancel" }
+            ],
+            [
+              { text: "ok", onPress: () => console.log("ok Pressed"), style: "ok" }
+            ]
+          );
+        }}
+      />
       <ActivityIndicator/>
       <ActivityIndicator size={"large"}/>
       <ActivityIndicator size={"large"} color={"black"}/>
