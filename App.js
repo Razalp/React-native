@@ -10,6 +10,8 @@ export default function App() {
   return (
     <ScrollView style={{ flex: 1, backgroundColor: "white", padding: 60 }}>
       <ActivityIndicator/>
+      <ActivityIndicator size={"large"}/>
+      <ActivityIndicator size={"large"} color={"black"}/>
       <Button title='Toggle Modal' color="green" onPress={() => setIsModalVisible(!isModalVisible)} />
       <Modal visible={isModalVisible} transparent={true} animationType="slide">
         <View style={styles.modalContainer}>
