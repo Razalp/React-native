@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 // import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image, ImageBackground, ScrollView, Button, Pressable, Modal,StatusBar } from 'react-native';
+import { StyleSheet, Text, View, Image, ImageBackground, ScrollView, Button, Pressable, Modal,StatusBar,ActivityIndicator } from 'react-native';
 
 const logoImage = require("./assets/adaptive-icon.png");
 
@@ -9,6 +9,7 @@ export default function App() {
 
   return (
     <ScrollView style={{ flex: 1, backgroundColor: "white", padding: 60 }}>
+      <ActivityIndicator/>
       <Button title='Toggle Modal' color="green" onPress={() => setIsModalVisible(!isModalVisible)} />
       <Modal visible={isModalVisible} transparent={true} animationType="slide">
         <View style={styles.modalContainer}>
