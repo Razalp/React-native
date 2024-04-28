@@ -1,34 +1,26 @@
 import React, { useState } from 'react';
-// import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image, ImageBackground, ScrollView, Button, Pressable, Modal,StatusBar,ActivityIndicator ,Alert } from 'react-native';
-import Greet from './Componets/Greet';
+import { StyleSheet, Text, View, Image, ImageBackground, ScrollView, Button, Pressable, Modal, StatusBar, ActivityIndicator, Alert } from 'react-native';
 
 const logoImage = require("./assets/adaptive-icon.png");
 
 export default function App() {
-
+  // Define an array of colors
+  const colors = ["red", "blue", "green", "yellow", "orange", "purple", "pink", "cyan", "magenta", "brown"];
 
   return (
-<View>
-  <Text>hello</Text>
-  <Greet name="razal"/>
-  <Greet name="moos"/>
-  <Greet name="razal moosa"/>
-</View>
+    <View style={{ backgroundColor: "black", flex: 1 }}>
+      {/* Map through the colors array and render a View for each color */}
+      {colors.map((color, index) => (
+        <View key={index} style={[styles.box, { backgroundColor: color }]} />
+      ))}
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
-  modalContainer: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'rgba(0, 0, 0, 0.5)',
-  },
-  modalContent: {
-    backgroundColor: 'white',
-    padding: 20,
-    borderRadius: 10,
-    elevation: 5,
+  box: {
+    width: 100,
+    height: 100,
+    margin: 10,
   },
 });
